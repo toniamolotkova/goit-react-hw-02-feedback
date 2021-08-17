@@ -6,8 +6,11 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
       <li className={s.item}>Good: {good}</li>
       <li className={s.item}>Neutral: {neutral}</li>
       <li className={s.item}>Bad: {bad}</li>
-      <li>Total: {total} </li>
-      <li> Good feedbacks: {positivePercentage}%</li>
+      <li className={s.item}>Total: {total} </li>
+      <li className={s.item}>
+        {' '}
+        Good feedbacks: {isNaN(positivePercentage) ? good : positivePercentage}%
+      </li>
     </ul>
   );
 };

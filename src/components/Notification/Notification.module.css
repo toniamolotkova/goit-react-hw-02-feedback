@@ -1,9 +1,5 @@
-ul {
+.title {
   margin-top: 20px;
-}
-
-.item {
-  margin-bottom: 5px;
 
   font-size: 18px;
   font-weight: 500;
