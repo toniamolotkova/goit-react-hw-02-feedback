@@ -12,22 +12,11 @@ class App extends Component {
     bad: 0,
   };
 
-  handleGoodFeedback = () => {
+  onLeaveFeedback = key => {
     this.setState(prevState => ({
-      good: prevState.good + 1,
+      [key]: prevState[key] + 1,
     }));
   };
-  handleNeutralFeedback = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-  handleBadFeedback = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-  };
-
   countTotalFeedback = () => {
     return this.state.good + this.state.bad + this.state.neutral;
   };
@@ -37,15 +26,12 @@ class App extends Component {
   };
 
   render() {
-    //const total = good + neutral + bad;
-
     return (
       <>
         <Section title={'Please, leave feedback'}>
           <FeedbackOptions
-            goodFeedback={this.handleGoodFeedback}
-            neutralFeedback={this.handleNeutralFeedback}
-            badFeedback={this.handleBadFeedback}
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
 

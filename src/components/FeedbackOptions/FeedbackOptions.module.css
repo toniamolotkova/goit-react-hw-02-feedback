@@ -6,10 +6,11 @@
 }
 .btn {
   padding: 5px;
-  width: 80px;
+  width: 90px;
 
   font-size: 14px;
   font-weight: 700;
+  text-transform: uppercase;
 
   color: #fff;
   background-color: #7467c7;
